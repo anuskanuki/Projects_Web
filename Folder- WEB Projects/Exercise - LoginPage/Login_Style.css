@@ -1,0 +1,24 @@
+.Content {
+    text-align: center;
+    position: absolute;
+    left: 38%;
+    top: 25%;
+    background-color: #f6f7ff1f;
+    width: 450px;
+    height: 350px;
+    margin: auto;
+}
+
+    .Content input {
+        width: 400px;
+        height: 40px;
+        margin: 16px;
+        font-size: medium;
+        border: none;
+        outline: none;
+    }
+
+video {
+    width: 100%;
+    height: 100%;
+}

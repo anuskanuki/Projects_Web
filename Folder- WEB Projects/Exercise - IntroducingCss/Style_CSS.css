@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.textclass p {
+	align-items: center;
+	justify-content: center;
+	color: black;
+	font-size: 18px;
+	width: 500px;
+	height: 180px;
+}
+
+.textclass h1 {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	color: #71a4a4;
+}
