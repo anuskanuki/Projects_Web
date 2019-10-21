@@ -1,16 +1,12 @@
 $(document).ready(
     function () {
-
+        $('#cep').mask("00000-000");
         $('#newconsult').click(function () {
             ClearScreen();
         });
 
-        $('#cep').mask("00000-000");
-
         $('#consult').click(
             function () {
-
-
 
                 $.get("https://viacep.com.br/ws/" + $('#cep').val() + "/json", function (data) {
 
