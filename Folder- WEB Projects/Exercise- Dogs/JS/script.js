@@ -5,12 +5,23 @@ var Dog =
     Breed: "Tomba",
     Age: 15
 }
+
 var ArrayDogs = [Dog];
 
 $(document).ready(
     function () {
         $('#show').click(function () {
-            alert(JSON.stringify(ArrayDogs));
+
+            //alert(JSON.stringify(ArrayDogs));
+
+            var stringTemplate = "Registered Dogs:\n\n";
+
+            for (var i = 0; i < ArrayDogs.length; i++) {
+                stringTemplate += ArrayDogs[i].Name + "\r\n";
+            }
+
+            alert(stringTemplate);
+            ClearScreen();
         });
 
         $('#save').click(function () {
@@ -20,13 +31,21 @@ $(document).ready(
                 Color: $('#color').val(),
                 Breed: $('#breed').val(),
                 Age: $('#age').val(),
+               
             }
-            ArrayDoguinhos.push(NewDog);
-            alert("Dog saved!");
+            
+            ArrayDogs.push(NewDog);
+            var stringResult = "Dog sucessfully saved!\r\nName: " + NewDog.Name + "\r\nBreed: " + NewDog.Breed + "\r\nColor: " + NewDog.Color + "\r\n" + NewDog.Age+" years";
+            alert(stringResult);
+            ClearScreen();
+           
         });
 
     });
-
+function ClearScreen() {
+    var myInputs = $('input[type="text"]');
+        myInputs.val("");
+}
 
 
 
