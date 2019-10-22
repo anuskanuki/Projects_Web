@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+
+
+    <div class="container-fluid h-100">
+        <div class="row d-flex align-content-center justify-content-center h-100">
+            <div class="col-md-3">
+
+
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">CEP ORIGEM</span>
+                        </div>
+                        <input type="text" autofocus id="ceporigem" class="form-control form-group" name="CepOrigem" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">CEP Destino</span>
+                        </div>
+                        <input type="text" autofocus id="cepdestino" class="form-control form-group" name="CepDestino" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Peso</span>
+                        </div>
+                        <input type="text" id="peso" autofocus class="form-control form-group" name="peso" />
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Tipo Serviço</span>
+                            <select id="selectservico" class="w-100">
+                                <option class="form-control form-group">--Tipo de serviço--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Formato Encomenda</span>
+                            <select id="formatoencomenda" class="w-100">
+                                <option class="form-group">--Formato de Encomenda--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Comprimento (cm)</span>
+                        </div>
+                        <input type="text" id="comprimento" autofocus class="form-control form-group" name="comprimento" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Largura</span>
+                        </div>
+                        <input type="text" id="largura " autofocus class="form-control form-group" name="largura" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Altura</span>
+                        </div>
+                        <input type="text" id="altura" autofocus class="form-control form-group" name="altura" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Diâmetro</span>
+                        </div>
+                        <input type="text" id="diametro" autofocus class="form-control form-group" name="diametro" />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <input type="button" id="consultar" name="consultar" class="btn btn-danger w-50 form-group" value="Consultar" />
+                    <input type="button" id="limpar" name="limpar" class="btn btn-danger w-50 form-group" value="Nova consulta" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    < src="s/jquery-3.0.0.min.js"></>
+    < src="s/bootstrap.min.js"></>
+    < src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></>
+    < src="s/Utils/s.js"></>
+</body>
+</html>
