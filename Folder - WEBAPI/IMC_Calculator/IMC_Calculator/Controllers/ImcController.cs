@@ -42,7 +42,7 @@ namespace IMC_Calculator.Controllers
         [HttpGet]
         public Imc CalcIMC(double weight, double height, string name)
         {
-           var result= GetImc(weight, height);
+            var result = GetImc(weight, height);
 
             Imc objectImc = new Imc()
             {
@@ -62,8 +62,14 @@ namespace IMC_Calculator.Controllers
         }
 
 
+        public Imc Post(Imc values)
+        {
+            Imc imcCalc = values;
+            imcCalc.ImcValue = imcCalc.Weight / (imcCalc.Height * imcCalc.Height);
+            return imcCalc;
+        }
 
-
+    
 
     }
 }

@@ -8,7 +8,7 @@ $(document).ready(function () {
         $.get("http://localhost:59189/api/Imc?" + formCampos, function (data) {
             $('#imc').val(data.ImcValue);
         });
-
+         
         $.get("http://localhost:59189/api/Imc/Msg?" + formCampos, function (data) {
             $('#msg').val(data)
         });
