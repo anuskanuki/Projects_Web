@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="Styles/style.css" rel="stylesheet" />
+    <title>IMC Calculator</title>
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row d-flex align-content-center justify-content-center h-100">
+            <div class="col-md-3">
+
+
+                <form id="form_principal">
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Name</span>
+                            </div>
+                            <input type="text" autofocus id="name" class="form-control form-group" name="Name" placeholder="Enter name" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Weight</span>
+                            </div>
+                            <input type="text" autofocus id="weight" class="form-control form-group" name="Weight" placeholder="Enter weight" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Height</span>
+                            </div>
+                            <input type="text" id="height" autofocus class="form-control form-group" name="Height" placeholder="Enter height" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <input type="button" id="show" name="btnshow" class="btn btn-danger w-50 form-group" value="Calculate IMC" />
+                        <input type="button" id="clear" name="btnclear" class="btn btn-danger w-50 form-group" value="Clear" />
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">IMC</span>
+                            </div>
+                            <input type="text" id="imc" autofocus class="form-control form-group" name="imc" placeholder="Enter your data to apply" disabled />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Avaliation</span>
+                            </div>
+                            <input type="text" id="msg" autofocus class="form-control form-group" name="msg" placeholder="Enter your data to apply" disabled />
+                        </div>
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+    <script src=" Scripts/script.js"></script>
+</body>
+</html>
