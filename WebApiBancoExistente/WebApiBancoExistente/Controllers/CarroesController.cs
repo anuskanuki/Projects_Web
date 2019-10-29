@@ -56,6 +56,27 @@ namespace WebApiBancoExistente.Controllers
 
 
 
+        [HttpGet]
+        [Route("Api/Carroes/UsuIns")]
+        public object UsuarioQueInseriuOcarro(int idCarro)
+        {
+            var listaDeCarros = db.Carros.Where(p => p.Id == idCarro).ToList();
+            var listaDeUsuarios = db.Usuarios.ToList();
+
+            var conteudoRetorno = from usu in listaDeUsuarios
+                                  join car in listaDeCarros
+                                  on usu.Id equals car.UsuInc
+                                  select new
+                                  {
+                                      UsuarioId = usu.Id,
+                                      DataInclusao = car.DatInc,
+                                      UsuarioNome=usu.Usuario1
+                                  };
+            return conteudoRetorno;
+
+        }
+
+
         // GET: api/Carroes
         public IQueryable<Carro> GetCarros()
         {
