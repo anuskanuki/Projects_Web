@@ -21,7 +21,11 @@
                 Name = "Anuska",
                 Email = "anuska.rehn@gmail.com"
             });
+            context.Properties.AddOrUpdate(x => x.PostalCode, new Models.Property()
+            {
+                AdressStreet = "DefaultStreet"
 
+            });
         }
     }
 }
