@@ -1,0 +1,255 @@
+<style>
+    .colorBox {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        float: left;
+    }
+
+    .listStyle {
+        font-size: medium;
+        color: rgb(7, 172, 150);
+    }
+
+    body {
+        background-color: rgb(49, 45, 45);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .headPage {
+        color: blueviolet;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .module1 {
+        float: left;
+        width: 48%;
+        margin: 0%;
+        padding: 1%;
+        color: aqua;
+        font-size: 24px;
+    }
+
+    .module2 {
+        float: right;
+        width: 47%;
+        margin: 0%;
+        padding: 1%;
+        color: aqua;
+        font-size: 24px;
+    }
+
+    .initModules {
+        text-align: center;
+    }
+
+    .inputEx2,
+    .inputEx4 {
+        width: 50px;
+    }
+
+    .ex3mod2 {
+        float: left;
+        width: 20%;
+        margin: 0%;
+        padding: 1%;
+        color: aqua;
+        font-size: 24px;
+    }
+
+    .ex4mod2 {
+        float: right;
+        width: 45%;
+        margin: 0%;
+        padding: 1%;
+        color: aqua;
+        font-size: 24px;
+    }
+</style>
+
+<html>
+
+<body>
+    <title>Nuki's Exercises</title>
+    <h1 class='headPage'>Welcome to Nuki's exercises page!</h1>
+    <div class="module1">
+        <p class="initModules">-- MODULE 01 --</p>
+        <div class="ex1">
+            <p id="innerEx1">1) I've created a function to return the following content: </p>
+        </div>
+        <div class="ex2">
+            <p>2) This will show you all the pair numbers between 1 and the number you've
+                choosed!</p>
+            <input value="1" type="number" placeholder="Type a number" id="inputNumberEx2" class="inputEx2">
+            <button onclick="pairNumbers(inputNumberEx2.value)">Try it</button>
+            <p id="innerEx2">Result: </p>
+        </div>
+        <div class="ex3">
+            <p id="innerEx3">3) This is a function witch verify if
+                the skills array has the "React" atribute and returns a boolean as result:
+            </p>
+        </div>
+        <div class="ex4">
+            <p>
+                4) How many years of experience do you have at studying?
+                <input value="0" type="number" id="inputNumberEx4" class="inputEx4">
+                <button onclick="getExperience(inputNumberEx4.value)">Try it</button>
+            </p>
+            <p id="innerEx4">0 - 1: begginer | 1 - 3: intermediate | 3 - 6: advanced | beyond 7: stonks </p>
+        </div>
+        <div class="ex5">
+            <p>5) I've made a function to return this output:</p>
+            <p id="innerEx5"></p>
+        </div>
+    </div>
+    <div class="module2">
+        <p class="initModules">-- MODULE 02 --</p>
+        <div class="ex1mod2">
+            <p>The following button creates 5 boxes with random colors:</p>
+            <button onclick="createBox()"> Magic Boxes</button>
+            <div id="app"></div>
+        </div>
+        <div class="ex3mod2">
+            <p>- Static list:</p>
+            <input type="text" id="inputListMod2" placeholder="Type here">
+            <p> <button onclick="addToTheList(inputListMod2.value)"> Add to the list</button></p>
+        </div>
+        <div class="ex4mod2" id="todoList">
+            <p>- Todo dynamic list:</p>
+            <input id="todoInput" type="text" id="inputDynamicList" placeholder="Type todo here">
+            <p><button id="todoButton">Add</button></p>
+            <ul></ul>
+        </div>
+    </div>
+    <script>
+        //ROCKETSEAT - JS 
+        //MODULO 01 ---------------------------------------------------------------------------------
+        //1)---------------------------------------------------------------------------------
+        var adress = {
+            "street": "Lake street",
+            "number": 123,
+            "neighborhood": "Blues",
+            "city": "Unicorns"
+        };
+        function ex1Output() {
+            var returning = "This user lives in " + adress.city + " at the " + adress.neighborhood + " neighborhood, number " + adress.number;
+            return returning += "\n\n";;
+        }
+        document.getElementById("innerEx1").innerHTML += ex1Output();
+
+        //2)---------------------------------------------------------------------------------
+        function pairNumbers(y) {
+            y = +y;
+            var result = 0;// `Pair numbers between ${x} and ${y}: `;
+            if (y <= 0)
+                return document.getElementById('innerEx2').innerHTML = "Result: " + "Input only positive numbers :)";
+            else {
+                for (var i = 1; i != y; i++) {
+                    if (i % 2 == 0)
+                        result++;
+                }
+            }
+            return document.getElementById('innerEx2').innerHTML = "Result: " + result;
+        }
+
+        //3)---------------------------------------------------------------------------------
+        var skills = ["JavaScript", "React", "Node"].map(d => d.toLowerCase());
+
+        function hasSkill(arraySk) {
+            return arraySk.indexOf('react') >= 0 ? 'Has element' : 'Not found';
+        }
+        document.getElementById("innerEx3").innerHTML += hasSkill(skills);
+
+        //4)---------------------------------------------------------------------------------
+        function getExperience(years) {
+            years = +years;
+
+            if (years < 0)
+                return document.getElementById('innerEx4').innerHTML = "Input only positive numbers :)";
+
+            switch (years) {
+                case 0:
+                case 1:
+                    return document.getElementById('innerEx4')
+                        .innerHTML = "BEGGINER - Congrats on starting your journey!";
+                case 2:
+                case 3:
+                    return document.getElementById('innerEx4')
+                        .innerHTML = "INTERMEDIATE - Congrats on your journey!";
+                default:
+                    return document.getElementById('innerEx4')
+                        .innerHTML = "STONKS ADVANCED - Congrats on your history!";
+            }
+        }
+
+        //5)---------------------------------------------------------------------------------
+        var users = [{
+            name: "John",
+            skills: ["JavaScript", "React", "C#"]
+        },
+        {
+            name: "Vanwzitch",
+            skills: ["Java", "Git", "BI", "Ember"]
+        }];
+
+        function showSkills(users) {
+            var response = "";
+            users.forEach(element => {
+                response += element.name + ' knows: ' + element.skills.join(",");
+                response += "\n";
+            });
+            return response;
+        }
+        document.getElementById("innerEx5").innerHTML += showSkills(users);
+    </script>
+    <script>
+        //MODULO 02 ---------------------------------------------------------------------------------
+        //1 & 2)
+        function createBox() {
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            var divBoxes = document.createElement('div');
+
+            divBoxes.setAttribute('class', 'colorBox');//set the class name to this div 
+            divBoxes.setAttribute('style', 'background-color:#' + randomColor + ';');//give the random color to the boxes setted at the stule named "colorBox" 
+            divBoxes.setAttribute('id', "a" + randomColor);
+            divBoxes.setAttribute("onMouseOver", 'changeColor(this)');//this is number 2 (on mouse over, change the color)
+
+            var createElement = document.querySelector('#app');
+            createElement.appendChild(divBoxes);
+        }
+
+        function changeColor(element) {
+            var boxId = element.id;
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            var boxSelector = document.querySelector("#" + boxId);
+            boxSelector.setAttribute('style', 'background-color:#' + randomColor + ';');
+        }
+
+        var list = [],
+            body = document.getElementsByTagName("body"),
+            table = document.createElement("table"),
+            tableBody = document.createElement("tbody"),
+            row = document.createElement("ul");
+
+        function addToTheList(text) {
+            list.push(text);//that's not a html fuc, that's a javaScript inside the HTML apok  and here is the 
+
+            var item = list[list.length - 1];
+            var cell = document.createElement("li");
+            var cellText = document.createTextNode(item);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+
+            tableBody.appendChild(row);
+
+            table.appendChild(tableBody);
+            body[0].appendChild(table);
+        }
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
